@@ -27,7 +27,7 @@ import removeTags from 'posthtml-remove-tags';
 const html = readFileSync('input.html', 'utf8');
 
 posthtml()
-    .use(removeTags({tags: ['<style></style>']}))
+    .use(removeTags({tags: '<style></style>'}))
     .process(html)
     .then(result => {
         writeFileSync('output.html', result.html);
@@ -53,6 +53,31 @@ Returns the html without the tags listed in option
 ## Options
 
 #### `tags`
-Type: `String|Array`  
+Type: `String`  
 Default: ``
 *The list of tags to be deleted*
+*Attention, currently works only with `string`, `array` is planed*
+
+## LICENSE
+
+> MIT License (MIT)
+
+>Copyright (c) Ivan Demidov <scrum@list.ru>
+
+> Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+> The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
