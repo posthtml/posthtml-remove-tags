@@ -1,6 +1,6 @@
 {
   "name": "posthtml-remove-tags",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A posthtml plugin for removing tags",
   "license": "MIT",
   "repository": {
