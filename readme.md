@@ -54,9 +54,9 @@ Returns the html without the tags listed in option
 
 #### `tags`
 Type: `String`  
-Default: ``
-*The list of tags to be deleted*
-*Attention, currently works only with `string`, `array` is planed*
+Default: ` `  
+Description: *The list of tags to be deleted*  
+*:warning: currently works only with `string`, `array` is planed*
 
 ## LICENSE
 
