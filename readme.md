@@ -27,7 +27,7 @@ import removeTags from 'posthtml-remove-tags';
 const html = readFileSync('input.html', 'utf8');
 
 posthtml()
-    .use(removeTags({tags: '<style></style>'}))
+    .use(removeTags({tags: ['style','script']}))
     .process(html)
     .then(result => {
         writeFileSync('output.html', result.html);
@@ -53,10 +53,9 @@ Returns the html without the tags listed in option
 ## Options
 
 #### `tags`
-Type: `String`  
-Default: ` `  
+Type: `Array`  
+Default: `[]`  
 Description: *The list of tags to be deleted*  
-*:warning: currently works only with `string`, `array` is planed*
 
 ## LICENSE
 
