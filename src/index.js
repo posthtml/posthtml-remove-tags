@@ -1,7 +1,7 @@
 module.exports = function (options) {
   
  var _tags =  options.tags.map(function(tag){
-                  return { tag };
+                  return { tag: tag };
             });
 
   return function (tree) {
