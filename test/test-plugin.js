@@ -1,4 +1,3 @@
-// import {readFile} from 'fs';
 import test from 'ava';
 import posthtml from 'posthtml';
 import isPromise from 'is-promise';
@@ -9,17 +8,6 @@ function processing(html, settings = {}, plugins = []) {
 		.use(removeTags(settings))
 		.process(html);
 }
-
-/* function read(pathFile) {
-	return new Promise((resolve, reject) => {
-		readFile(pathFile, 'utf8', (err, data) => {
-			if (err) {
-				reject(err);
-			}
-			return resolve(data);
-		});
-	});
-} */
 
 test('plugin must be function', t => {
 	t.true(typeof removeTags === 'function');
