@@ -1,6 +1,6 @@
 {
   "name": "posthtml-remove-tags",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A posthtml plugin for removing tags",
   "license": "MIT",
   "repository": "GitScrum/posthtml-remove-tags",
