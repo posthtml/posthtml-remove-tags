@@ -27,7 +27,7 @@ import removeTags from 'posthtml-remove-tags';
 const html = readFileSync('input.html', 'utf8');
 
 posthtml()
-    .use(removeTags({tags: ['style','script']}))
+    .use(removeTags({tags: ['style', 'script']}))
     .process(html)
     .then(result => {
         writeFileSync('output.html', result.html);
