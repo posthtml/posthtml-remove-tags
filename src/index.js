@@ -1,15 +1,15 @@
-module.exports = function (options) {
-  
- var _tags =  options.tags.map(function(tag){
-                  return { tag: tag };
-            });
+export default options => tree => new Promise((resolve, reject) => {
+	if (!Array.isArray(tree)) {
+		reject(new Error(`tree is not Array`));
+	}
 
-  return function (tree) {
-    tree.match(_tags, function(node){
-      node.tag = false;
-      node.content = [];
-      return node;
-    })
-    return tree;
-  }; 
-};
+	if (tree.length === 0) {
+		resolve(tree);
+	}
+
+	resolve(tree.match(options.tags.map(tag => ({tag: tag})), node => {
+		node.tag = false;
+		node.content = [];
+		return node;
+	}));
+});
