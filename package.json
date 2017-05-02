@@ -94,7 +94,6 @@
       "ava",
       "xo",
       "babel",
-      "require-path-exists",
       "markdown"
     ],
     "extends": [
