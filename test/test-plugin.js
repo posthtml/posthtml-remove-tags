@@ -26,7 +26,7 @@ test('plugin must be function', t => {
 });
 
 test('should return reject', async t => {
-	t.throws(removeTags()());
+	await t.throws(removeTags()());
 });
 
 test('should return promise', t => {
@@ -36,5 +36,5 @@ test('should return promise', t => {
 test('should remove style tags', async t => {
 	const fixture = '<html><style></style></html>';
 	const expected = '<html></html>';
-	t.deepEqual(expected, (await processing(fixture, {tags: 'style'})).html);
+	t.deepEqual(expected, (await processing(fixture, {tags: ['style']})).html);
 });
