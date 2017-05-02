@@ -1,4 +1,3 @@
-// import {readFile} from 'fs';
 import test from 'ava';
 import posthtml from 'posthtml';
 import isPromise from 'is-promise';
@@ -10,23 +9,12 @@ function processing(html, settings = {}, plugins = []) {
 		.process(html);
 }
 
-/* function read(pathFile) {
-	return new Promise((resolve, reject) => {
-		readFile(pathFile, 'utf8', (err, data) => {
-			if (err) {
-				reject(err);
-			}
-			return resolve(data);
-		});
-	});
-} */
-
 test('plugin must be function', t => {
 	t.true(typeof removeTags === 'function');
 });
 
 test('should return reject', async t => {
-	t.throws(removeTags()());
+	await t.throws(removeTags()());
 });
 
 test('should return promise', t => {
@@ -36,5 +24,5 @@ test('should return promise', t => {
 test('should remove style tags', async t => {
 	const fixture = '<html><style></style></html>';
 	const expected = '<html></html>';
-	t.deepEqual(expected, (await processing(fixture, {tags: 'style'})).html);
+	t.deepEqual(expected, (await processing(fixture, {tags: ['style']})).html);
 });
