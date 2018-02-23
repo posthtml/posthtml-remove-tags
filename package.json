@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "description": "A posthtml plugin for removing tags",
   "license": "MIT",
-  "repository": "GitScrum/posthtml-remove-tags",
-  "homepage": "https://github.com/GitScrum/posthtml-remove-tags#readme",
-  "bugs": "GitScrum/posthtml-remove-tags/issues",
+  "repository": "posthtml/posthtml-remove-tags",
+  "homepage": "https://github.com/posthtml/posthtml-remove-tags#readme",
+  "bugs": "posthtml/posthtml-remove-tags/issues",
   "author": {
     "name": "Ivan Demidov",
     "email": "Scrum@list.ru",
